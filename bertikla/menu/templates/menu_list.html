@@ -1,0 +1,108 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Products</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <style>
+        .accordion-button {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 4vw;
+            transition: background-color 0.4s ease;
+        }
+
+        .accordion-button:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .accordion-button.active:after {
+            content: "\2212";
+        }
+
+        .accordion-content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: white;
+            margin: 10px;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-top: 5px;
+        }
+
+        .product-item img {
+            margin-right: 20px;
+            height: 100px;
+
+        }
+
+        .product-details {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="accordion">
+    {% for category in categories %}
+    <div class="accordion-item">
+        <button class="accordion-button">{{ category.name }}</button>
+        <div class="accordion-content">
+            {% for product in products %}
+            {% if product.category_id == category %}
+            <div class="product-item">
+                <img src="{{ product.photo.url }}" alt="Photo of {{ product.name }}">
+                <div class="product-details">
+                    <p class="prodname">{{ product.name }}</p>
+                    <p class="prodprice"> ₺{{ product.price }}</p>
+                    <p class="ingredients">{{ product.ingredients }}</p>
+                    <br>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var accButtons = document.getElementsByClassName('accordion-button');
+        for (var i = 0; i < accButtons.length; i++) {
+            accButtons[i].addEventListener('click', function () {
+                this.classList.toggle('active');
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
