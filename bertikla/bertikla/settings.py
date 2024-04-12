@@ -37,6 +37,7 @@ CSRF_TRUSTED_ORIGINS = ['http://berticoffee.com/', 'https://berticoffee.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'jasmine',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
