@@ -32,13 +32,8 @@ ALLOWED_HOSTS = ['160.20.110.222:8000',
                  'berticoffee.com',
                  'www.berticoffee.com']
 
-CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
 
-# The value of the SameSite flag on the CSRF cookie
-# https://docs.djangoproject.com/en/3.2/ref/settings/#csrf-cookie-samesite
-CSRF_COOKIE_SAMESITE = 'Strict'
-
-CSRF_TRUSTED_ORIGINS = ALLOWED_HOSTS.copy()
 # Application definition
 
 INSTALLED_APPS = [
