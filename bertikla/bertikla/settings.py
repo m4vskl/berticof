@@ -29,7 +29,8 @@ ALLOWED_HOSTS = ['160.20.110.222:8000',
                  '160.20.110.222',
                  'localhost',
                  '127.0.0.1',
-                 'berticoffee.com']
+                 'berticoffee.com',
+                 'www.berticoffee.com']
 
 
 # Application definition
