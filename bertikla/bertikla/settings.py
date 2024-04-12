@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['160.20.110.222:8000',
                  'berticoffee.com',
                  'www.berticoffee.com']
 
-CSRF_TRUSTED_ORIGINS = ['http://berticoffee.com/', 'https://berticoffee.com/']
+CSRF_TRUSTED_ORIGINS = ['http://berticoffee.com/', 'https://www.berticoffee.com/']
 
 # Application definition
 
