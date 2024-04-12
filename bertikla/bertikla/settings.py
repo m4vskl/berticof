@@ -130,3 +130,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 STATIC_URL = '/menu/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Berti Coffee",
+    "site_header": "Berti Coffee",
+    "welcome_sign": "Berti Coffee Admin Panel",
+    "site_brand": "Berti Coffee"}
