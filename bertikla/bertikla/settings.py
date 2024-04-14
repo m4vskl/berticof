@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p254(mp744i196r&w874fn&8+_od7si*t2)b&7uzgm3w04@a-r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['160.20.110.222:8000',
                  '160.20.110.222',
@@ -137,3 +137,8 @@ JAZZMIN_SETTINGS = {
     "site_header": "Berti Coffee",
     "welcome_sign": "Berti Coffee Admin Panel",
     "site_brand": "Berti Coffee"}
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'menu/static'),
+]
