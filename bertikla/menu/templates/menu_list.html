@@ -70,10 +70,9 @@
         position: relative;
         width: 100%;
         height: 100vh;
-        background: url('banner-image.jpg') no-repeat center center;
-        background-size: fill;
-        margin: 0;
-        padding: 0;
+        background: url('banner-image.jpg') fixed;
+        background-size: contain;
+
     }
 
     .scroll-btn {
@@ -97,7 +96,8 @@
     .scroll-btn:active {
         background-color: #eaeaea;
     }
-    .fa-chevron-down{
+
+    .fa-chevron-down {
         font-size: 30px;
         color: rgba(255, 255, 255, 0.55);
     }
@@ -108,9 +108,29 @@
 <body>
 
 <div class="banner">
-    <img  class="banner" src="{% static 'images/banner-image.jpeg' %}" alt="Banner Image">
-    <button class="scroll-btn" onclick="scrollDown()"><i class="fa fa-chevron-down" aria-hidden="true"></i>
-</button>
+    <img class="banner-image" src="{% static 'images/banner-image.jpeg' %}" alt="Banner Image">
+    <div class="centered-text">
+        <div class="waviy">
+   <span style="--i:1">B</span>
+   <span style="--i:2">E</span>
+   <span style="--i:3">R</span>
+   <span style="--i:4">T</span>
+   <span style="--i:5">I</span>
+            <br>
+   <span style="--i:6">C</span>
+   <span style="--i:7">O</span>
+   <span style="--i:8">F</span>
+   <span style="--i:9">F</span>
+   <span style="--i:10">E</span>
+   <span style="--i:11">E</span>
+
+  </div>
+
+    </div>
+    <span class="menu-text-over-button">Menu</span>
+    <button class="scroll-btn" onclick="scrollDown()">
+        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </button>
 </div>
 
 <script>
