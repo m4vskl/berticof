@@ -3,3 +3,8 @@ from .models import Categories, Products
 
 admin.site.register(Categories)
 admin.site.register(Products)
+
+
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'category_id', 'price')
+    pass

@@ -111,20 +111,20 @@
     <img class="banner-image" src="{% static 'images/banner-image.jpeg' %}" alt="Banner Image">
     <div class="centered-text">
         <div class="waviy">
-   <span style="--i:1">B</span>
-   <span style="--i:2">E</span>
-   <span style="--i:3">R</span>
-   <span style="--i:4">T</span>
-   <span style="--i:5">I</span>
+            <span style="--i:1">B</span>
+            <span style="--i:2">E</span>
+            <span style="--i:3">R</span>
+            <span style="--i:4">T</span>
+            <span style="--i:5">I</span>
             <br>
-   <span style="--i:6">C</span>
-   <span style="--i:7">O</span>
-   <span style="--i:8">F</span>
-   <span style="--i:9">F</span>
-   <span style="--i:10">E</span>
-   <span style="--i:11">E</span>
+            <span style="--i:6">C</span>
+            <span style="--i:7">O</span>
+            <span style="--i:8">F</span>
+            <span style="--i:9">F</span>
+            <span style="--i:10">E</span>
+            <span style="--i:11">E</span>
 
-  </div>
+        </div>
 
     </div>
     <span class="menu-text-over-button">Menu</span>
@@ -145,10 +145,10 @@
         <div class="accordion-content">
             {% for product in products %}
             {% if product.category_id == category %}
-            <div class="product-item">
+            <div class="product-item{% if not product.available %} inactive{% endif %}">
                 <img src="{{ product.photo.url }}" alt="Photo of {{ product.name }}">
                 <div class="product-details">
-                    <p class="prodname">{{ product.name }}</p>
+                    <p class="prodname">{{ product.name }}  {% if not product.available %} (Mevcut Değil) {% endif %}</p>
                     <p class="prodprice"> ₺{{ product.price }}</p>
                     <p class="ingredients">{{ product.ingredients }}</p>
                     <br>
