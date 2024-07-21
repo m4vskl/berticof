@@ -28,7 +28,7 @@ class Products(models.Model):
     is_active = models.BooleanField(default=True, verbose_name='Aktif Mi?')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    order = models.IntegerField(null=True, default=0, verbose_name='Sıra')
 
     class Meta:
         verbose_name = 'Ürün'
