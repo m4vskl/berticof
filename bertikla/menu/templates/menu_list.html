@@ -131,7 +131,7 @@
             {% for product in products %}
             {% if product.category_id == category %}
             <div class="product-item{% if not product.available %} inactive{% endif %}">
-                <img class="lazy" data-src="{{ product.photo.url }}" alt="Photo of {{ product.name }}">
+                <img data-src="{{ product.photo.url }}" alt="Photo of {{ product.name }}">
                 <div class="product-details">
                     <p class="prodname">{{ product.name }}  {% if not product.available %} (Mevcut Değil) {% endif %}</p>
                     <p class="prodprice"> ₺{{ product.price }}</p>
